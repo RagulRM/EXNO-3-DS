@@ -73,6 +73,10 @@ from sklearn.preprocessing import OneHotEncoder
 ohe=OneHotEncoder(sparse=False)
 df2=df.copy()
 enc=pd.DataFrame(ohe.fit_transform(df2[['nom_0']]))
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/c11acf74-0ce7-4a48-bf53-57e0d1c6e6b0)
+
+```
 df2=pd.concat([df2,enc],axis=1)
 df2
 ```
