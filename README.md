@@ -74,7 +74,7 @@ ohe=OneHotEncoder(sparse=False)
 df2=df.copy()
 enc=pd.DataFrame(ohe.fit_transform(df2[['nom_0']]))
 ```
-![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/c11acf74-0ce7-4a48-bf53-57e0d1c6e6b0)
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/cf60bff3-f821-4062-95ce-fe504cd7f03f)
 
 ```
 df2=pd.concat([df2,enc],axis=1)
@@ -159,16 +159,26 @@ df
 
 ![Screenshot (254)](https://github.com/KayyuruTharani/EXNO-3-DS/assets/142209319/5275ad1b-f59f-448a-9e4e-9707907b0c75)
 ```
+df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"])
 df.skew()
 ```
 
-![Screenshot (255)1](https://github.com/KayyuruTharani/EXNO-3-DS/assets/142209319/eb53c6f3-abb8-4de1-9df8-1809bdc95742)
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/839b248a-2fbd-4077-ac79-dfa5d1cc33b6)
+
 
 ```
 df["Highly Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Highly Negative Skew"])
 df.skew()
 ```
 ![Screenshot (255)](https://github.com/KayyuruTharani/EXNO-3-DS/assets/142209319/f1c84b2c-2908-4142-b39a-ed87f94dc125)
+
+```
+from sklearn.preprocessing import QuantileTransformer
+qt=QuantileTransformer(output_distribution='normal')
+df["Moderate Negative Skew_1"]=qt.fit_transform(df[["Moderate Negative Skew"]])
+df
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/7223f748-643e-40e3-859c-ba1409488c06)
 
 ```
 import seaborn as sns
