@@ -190,6 +190,34 @@ plt.show()
 ```
 ![Screenshot (258)](https://github.com/KayyuruTharani/EXNO-3-DS/assets/142209319/4f1f94a2-f20c-4bc2-a156-10a7fcfb3388)
 
+```
+df["Highly Negative Skew_1"]=qt.fit_transform(df[["Highly Negative Skew"]])
+sm.qqplot(df["Highly Negative Skew"],line='45')
+plt.show()
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/a9424f67-92ee-4c43-b0c0-2fe23853c6b5)
+
+```
+sm.qqplot(df['Highly Negative Skew_1'],line='45')
+plt.show()
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/6a4202d5-abb8-4755-94e2-d1df72a34f2c)
+
+```
+dt=pd.read_csv("/content/titanic_dataset.csv")
+from sklearn.preprocessing import QuantileTransformer
+qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
+dt["Age_1"]=qt.fit_transform(dt[["Age"]])
+sm.qqplot(dt['Age'],line='45')
+plt.show()
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/0e6733d5-2142-46f1-ae17-9e4ef5105df8)
+```
+sm.qqplot(dt['Age_1'],line='45')
+plt.show()
+```
+![image](https://github.com/RagulRM/EXNO-3-DS/assets/121609342/1ba6ce97-199f-4057-923b-c406d9dd4a49)
+
       
 # RESULT:
       Finally, perform Feature Encoding and Transformation process is executed successfully.
